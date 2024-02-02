@@ -1,3 +1,7 @@
-from django.shortcuts import render
+from django.views.generic import ListView
+from .models import Post
+class BlogListView(ListView):
+    """Blog list view"""
 
-# Create your views here.
+    model = Post
+    template_name = "home.html"
