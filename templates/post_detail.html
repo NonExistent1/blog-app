@@ -7,8 +7,10 @@
     <p>{{ post.body }}</p>
 </div>
 
+{% if user.is_authenticated %}
 <p><a href="{% url 'post_edit' post.pk %}">+ Edit Blog Post</a></p>
 <p><a href ="{% url 'post_delete' post.pk %}">- Delete Blog Post</a></p>
+{% endif %}
 
 <h2>Posts by same author</h2>
     {% for apost in post.author.posts.all %}
